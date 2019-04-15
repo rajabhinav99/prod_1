@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+
+      <h2>Edit Product Details</h2>
+
+      <br>
+
+      <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <label for="pid">ID:</label>
+          <input type="number" class="form-control" formControlName="pid" />
+          <div *ngIf="submitted && editForm.controls.pid.errors" class="error">
+            <div class="text-danger" *ngIf="editForm.controls.pid.errors.required">
+              ID is required..
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" formControlName="name" />
+          <div *ngIf="submitted && editForm.controls.name.errors" class="error">
+            <div class="text-danger" *ngIf="editForm.controls.name.errors.required">
+              Name is required..
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <input type="text" class="form-control" formControlName="description" />
+          <div *ngIf="submitted && editForm.controls.description.errors" class="error">
+            <div class="text-danger" *ngIf="editForm.controls.description.errors.required">
+              Description is required..
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="price">Price:</label>
+          <input type="number" class="form-control" formControlName="price" />
+          <div *ngIf="submitted && editForm.controls.price.errors" class="error">
+            <div class="text-danger" *ngIf="editForm.controls.price.errors">
+              Price is required..
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-primary">Submit</button>&nbsp;&nbsp;
+        <a class="btn btn-warning" [routerLink]="['/homepage']">Cancel</a>
+
+        <br><br>
+
+      </form>
+
+    </div>
+  </div>
+</div>

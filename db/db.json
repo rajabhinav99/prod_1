@@ -1,0 +1,25 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "pid": 4564,
+      "name": "Ewrwwe",
+      "description": "asd",
+      "price": 5654646
+    },
+    {
+      "id": 2,
+      "pid": 1010,
+      "name": "Jklj",
+      "description": "HKJ",
+      "price": 7485
+    },
+    {
+      "id": 3,
+      "pid": 2,
+      "name": "A",
+      "description": "a",
+      "price": 12
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+
+      <h2>Add New Product</h2>
+
+      <br>
+
+      <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <label for="pid">ID:</label>
+          <input type="number" class="form-control" formControlName="pid" id="pid" pattern="[0-9]{1,4}"/>
+          <div *ngIf="submitted && addForm.controls.pid.errors" class="error">
+            <div class="text-danger" *ngIf="addForm.controls.pid.errors.required">
+              ID is required..
+            </div>
+            <div class="text-danger" *ngIf="addForm.controls.pid.errors.pattern">
+              ID should be of max 4 digits..
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" formControlName="name" id="name" pattern="[A-Z][A-Za-z]{0,40}"/>
+          <div *ngIf="submitted && addForm.controls.name.errors" class="error">
+            <div class="text-danger" *ngIf="addForm.controls.name.errors.required">
+              Name is required..
+            </div>
+            <div class="text-danger" *ngIf="addForm.controls.name.errors.pattern">
+              First letter should be capital..
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <input type="text" class="form-control" formControlName="description" id="description" />
+          <div *ngIf="submitted && addForm.controls.description.errors" class="error">
+            <div class="text-danger" *ngIf="addForm.controls.description.errors.required">
+              Description is required..
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="price">Price:</label>
+          <input type="number" class="form-control" formControlName="price" id="price" />
+          <div *ngIf="submitted && addForm.controls.price.errors" class="error">
+            <div class="text-danger" *ngIf="addForm.controls.price.errors.required">
+              Price is required..
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-primary">Submit</button>&nbsp;&nbsp;
+        <a class="btn btn-warning" [routerLink]="['/homepage']">Cancel</a>
+
+      </form>
+
+    </div>
+  </div>
+</div>
